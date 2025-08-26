@@ -30,6 +30,10 @@ class ApiService {
     this.token = null;
   }
 
+  public getToken(): string | null {
+    return this.token;
+  }
+
   private async request<T>(
     endpoint: string,
     options: RequestInit = {}
@@ -222,6 +226,20 @@ class ApiService {
 
     if (!response.success) {
       throw new Error(response.error || "Failed to delete column");
+    }
+  }
+
+  public async reorderColumns(
+    boardId: string,
+    columnIds: string[]
+  ): Promise<void> {
+    const response = await this.request(`/boards/${boardId}/columns/reorder`, {
+      method: "PUT",
+      body: JSON.stringify({ columnIds }),
+    });
+
+    if (!response.success) {
+      throw new Error(response.error || "Failed to reorder columns");
     }
   }
 

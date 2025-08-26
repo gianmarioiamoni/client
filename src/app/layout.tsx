@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { SWRProvider } from '@/components/providers/SWRProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div id="root">
-          {children}
+          <SWRProvider>
+            {children}
+          </SWRProvider>
         </div>
       </body>
     </html>

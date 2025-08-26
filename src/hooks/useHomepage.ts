@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { useAuthStore } from '@/stores/auth';
-import { getNavigation } from '@/lib/homepage-utils';
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useAuthStore } from "@/stores/auth";
+import { getNavigation } from "@/lib/homepage-utils";
 
 /**
  * Custom hook for homepage logic and navigation
@@ -26,8 +26,8 @@ export const useHomepage = () => {
     navigation: {
       toLogin: navigateToLogin,
       toRegister: navigateToRegister,
-      toDemo: navigateToDemo
+      toDemo: navigateToDemo,
     },
-    appInfo: navigation.appInfo
+    appInfo: navigation.appInfo,
   };
 };

@@ -1,4 +1,4 @@
-import type { Task } from '@/types';
+import type { Task } from "@/types";
 
 /**
  * Pure functions for task-related calculations and utilities
@@ -26,7 +26,7 @@ export const getTaskDateStatus = (dueDate?: Date | string): TaskDateStatus => {
   return {
     isOverdue: diffTime < 0,
     isDueSoon: diffTime > 0 && diffTime < 24 * 60 * 60 * 1000, // Less than 24 hours
-    daysUntilDue: Math.abs(daysUntilDue)
+    daysUntilDue: Math.abs(daysUntilDue),
   };
 };
 
@@ -35,22 +35,22 @@ export const getTaskDateStatus = (dueDate?: Date | string): TaskDateStatus => {
  */
 export const getTaskStatusText = (task: Task): string => {
   const { isOverdue, isDueSoon } = getTaskDateStatus(task.dueDate);
-  
-  if (isOverdue) return 'Overdue';
-  if (isDueSoon) return 'Due Soon';
-  return 'On Track';
+
+  if (isOverdue) return "Overdue";
+  if (isDueSoon) return "Due Soon";
+  return "On Track";
 };
 
 /**
  * Get task priority display configuration
  */
-export const getTaskPriorityConfig = (priority: Task['priority']) => {
+export const getTaskPriorityConfig = (priority: Task["priority"]) => {
   const configs = {
-    low: { color: 'text-green-600 bg-green-100', label: 'Low' },
-    medium: { color: 'text-yellow-600 bg-yellow-100', label: 'Medium' },
-    high: { color: 'text-red-600 bg-red-100', label: 'High' }
+    low: { color: "text-green-600 bg-green-100", label: "Low" },
+    medium: { color: "text-yellow-600 bg-yellow-100", label: "Medium" },
+    high: { color: "text-red-600 bg-red-100", label: "High" },
   };
-  
+
   return configs[priority] || configs.medium;
 };
 
@@ -59,8 +59,8 @@ export const getTaskPriorityConfig = (priority: Task['priority']) => {
  */
 export const getDateStatusClasses = (dueDate?: Date | string): string => {
   const { isOverdue, isDueSoon } = getTaskDateStatus(dueDate);
-  
-  if (isOverdue) return 'text-red-600';
-  if (isDueSoon) return 'text-orange-600';
-  return 'text-gray-600';
+
+  if (isOverdue) return "text-red-600";
+  if (isDueSoon) return "text-orange-600";
+  return "text-gray-600";
 };

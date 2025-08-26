@@ -1,9 +1,9 @@
 // Barrel export for TaskCard components
-export { TaskCard } from './TaskCard';
-export { TaskCardHeader } from './TaskCardHeader';
-export { TaskCardContent } from './TaskCardContent';
-export { TaskCardActions } from './TaskCardActions';
-export { TaskPriorityBadge } from './TaskPriorityBadge';
-export { TaskAssignee } from './TaskAssignee';
-export { TaskDueDate } from './TaskDueDate';
-export { TaskCreationInfo } from './TaskCreationInfo';
+export { TaskCard } from "./TaskCard";
+export { TaskCardHeader } from "./TaskCardHeader";
+export { TaskCardContent } from "./TaskCardContent";
+export { TaskCardActions } from "./TaskCardActions";
+export { TaskPriorityBadge } from "./TaskPriorityBadge";
+export { TaskAssignee } from "./TaskAssignee";
+export { TaskDueDate } from "./TaskDueDate";
+export { TaskCreationInfo } from "./TaskCreationInfo";
